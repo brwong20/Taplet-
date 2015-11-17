@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="Conversations" representedClassName="Conversations" syncable="YES">
+        <attribute name="userIds" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="messageWithin" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Messages" inverseName="messageForConvo" inverseEntity="Messages" syncable="YES"/>
+    </entity>
+    <entity name="Messages" representedClassName="Messages" syncable="YES">
+        <attribute name="messageDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="messageImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="messageForConvo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Conversations" inverseName="messageWithin" inverseEntity="Conversations" syncable="YES"/>
+        <relationship name="whoSent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="messageSender" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Users" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhoto" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="messageSender" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Messages" inverseName="whoSent" inverseEntity="Messages" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Messages" positionX="-711" positionY="-3789" width="128" height="148"/>
+        <element name="Users" positionX="-891" positionY="-3786" width="128" height="118"/>
+        <element name="Conversations" positionX="-522" positionY="-3789" width="128" height="73"/>
+    </elements>
+</model>
