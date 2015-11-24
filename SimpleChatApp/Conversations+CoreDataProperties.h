@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Conversations (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) UNKNOWN_TYPEuserIds;
+@property (nullable, nonatomic, retain) NSString* userIds;
 @property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *messageWithin;
 
 @end

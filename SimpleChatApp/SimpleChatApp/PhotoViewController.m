@@ -8,11 +8,14 @@
 
 #import "PhotoViewController.h"
 #import "ViewController.h"
+#import "Messages.h"
+#import "AppDelegate.h"
 
 
 @interface PhotoViewController()
 
 @property (strong,nonatomic)UIGestureRecognizer *longPressReconigzer;
+@property (weak,nonatomic) NSManagedObjectContext* context;
 
 @end
 
@@ -26,6 +29,9 @@
     self.mainImageView.userInteractionEnabled = YES;
     self.longPressReconigzer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(photoOptions:)];
     [self.mainImageView addGestureRecognizer:self.longPressReconigzer];
+    
+    AppDelegate *myApp = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    self.context = myApp.managedObjectContext;
 }
 
 - (IBAction)sendButtonPressed:(id)sender {
@@ -60,7 +66,6 @@
                         [[NSNotificationCenter defaultCenter]postNotificationName:@"photoDeleted" object:nil];
                         [self.navigationController popViewControllerAnimated:NO];
                     });
-                    NSLog(@"Asset deleted!");
                 }
             }];
         }];

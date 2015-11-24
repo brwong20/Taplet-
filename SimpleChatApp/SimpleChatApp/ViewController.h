@@ -6,10 +6,14 @@
 //  Copyright © 2015 Brian Wong. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
 #import "MessageText.h"
 
 @interface ViewController : UIViewController
+
+@property (nonatomic, weak)NSManagedObjectContext *context;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 

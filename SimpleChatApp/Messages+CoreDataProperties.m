@@ -21,8 +21,4 @@
 @dynamic whoSent;
 @dynamic messageForConvo;
 
--(void)awakeFromInsert{
-    self.messageDate = [NSDate date];
-}
-
 @end

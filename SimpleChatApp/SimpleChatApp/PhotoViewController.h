@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+#import <CoreData/CoreData.h>
 
 @protocol PhotoViewDelegate <NSObject>
 

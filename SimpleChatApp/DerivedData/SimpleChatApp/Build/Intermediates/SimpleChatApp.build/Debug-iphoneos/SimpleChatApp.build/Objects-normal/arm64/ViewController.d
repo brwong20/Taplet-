@@ -6,4 +6,6 @@ dependencies: \
   /Users/Brwong/Desktop/Taplet/SimpleChatApp/SimpleChatApp/MessageCell.h \
   /Users/Brwong/Desktop/Taplet/SimpleChatApp/SimpleChatApp/PhotoViewController.h \
   /Users/Brwong/Desktop/Taplet/SimpleChatApp/SimpleChatApp/PhotosCollectionView.h \
-  /Users/Brwong/Desktop/Taplet/SimpleChatApp/SimpleChatApp/PictureDetailView.h
+  /Users/Brwong/Desktop/Taplet/SimpleChatApp/SimpleChatApp/PictureDetailView.h \
+  /Users/Brwong/Desktop/Taplet/SimpleChatApp/Messages+CoreDataProperties.h \
+  /Users/Brwong/Desktop/Taplet/SimpleChatApp/Messages.h

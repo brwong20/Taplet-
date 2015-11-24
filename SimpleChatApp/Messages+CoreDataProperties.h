@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *userName;
 @property (nullable, nonatomic, retain) NSString *userId;
 @property (nullable, nonatomic, retain) NSString *messageText;
-@property (nullable, nonatomic, retain) NSData *messageImage;
+@property (nullable, nonatomic, retain) NSString *messageImage;
 @property (nullable, nonatomic, retain) NSDate *messageDate;
 @property (nullable, nonatomic, retain) NSManagedObject *whoSent;
 @property (nullable, nonatomic, retain) Conversations *messageForConvo;

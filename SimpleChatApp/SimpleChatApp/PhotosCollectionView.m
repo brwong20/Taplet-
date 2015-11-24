@@ -297,8 +297,7 @@ static CGSize ImageViewSize;
 }
 
 -(void)photoDeleted:(NSNotification*)sender{
-    NSLog(@"Collection view reset because of photo delete.");
-    [self.collectionView reloadData];
+    //[self.collectionView reloadData];
     [self resetCachedAssets];
 }
 

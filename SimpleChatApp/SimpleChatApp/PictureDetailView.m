@@ -11,7 +11,7 @@
 
 @interface PictureDetailView()
 
-@property (strong,nonatomic) UILongPressGestureRecognizer *longPressGesture;
+@property (strong,nonatomic) UILongPressGestureRecognizer* longPressGesture;
 
 @end
 
@@ -49,7 +49,6 @@
         [alertController addAction:saveAction];
         
         [self presentViewController:alertController animated:YES completion:nil];
-        
     }
 }
 

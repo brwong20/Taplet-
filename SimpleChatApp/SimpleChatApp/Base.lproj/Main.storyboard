@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6d-ht-S6n">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V6d-ht-S6n">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -188,6 +188,7 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="x8k-o2-FY9" firstAttribute="leading" secondItem="Xvb-nP-0lN" secondAttribute="leading" constant="52" id="2we-6C-aZ6"/>
+                                                <constraint firstItem="z2z-hg-UIk" firstAttribute="leading" secondItem="mF0-fX-tDk" secondAttribute="trailing" constant="158.5" id="6Mo-sk-QV3"/>
                                                 <constraint firstAttribute="bottom" secondItem="z2z-hg-UIk" secondAttribute="bottom" constant="8" id="A0n-FE-E1r"/>
                                                 <constraint firstAttribute="bottom" secondItem="x8k-o2-FY9" secondAttribute="bottom" constant="4.5" id="AeO-2a-yza"/>
                                                 <constraint firstAttribute="bottom" secondItem="z2z-hg-UIk" secondAttribute="bottom" constant="-95" id="Fa3-dL-cNc"/>
@@ -209,6 +210,7 @@
                                                     <exclude reference="eg1-g0-nlx"/>
                                                     <exclude reference="J0p-7T-LYK"/>
                                                     <exclude reference="Fa3-dL-cNc"/>
+                                                    <exclude reference="PQo-3N-0qM"/>
                                                     <exclude reference="zKx-7x-bLP"/>
                                                 </mask>
                                             </variation>
