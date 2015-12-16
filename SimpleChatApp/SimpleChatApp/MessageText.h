@@ -16,10 +16,10 @@
 
 @end
 
-@interface MessageText : UIView
+@interface MessageText : UIView<UITextViewDelegate>
 
 @property (assign, nonatomic) id<TextBoxDelegate>delegate;
 
--(void)sendClicked;
+//-(void)sendClicked;
 
 @end

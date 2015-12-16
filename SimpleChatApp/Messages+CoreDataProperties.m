@@ -19,6 +19,7 @@
 @dynamic messageImage;
 @dynamic messageDate;
 @dynamic whoSent;
+@dynamic convoID;
 @dynamic messageForConvo;
 
 @end

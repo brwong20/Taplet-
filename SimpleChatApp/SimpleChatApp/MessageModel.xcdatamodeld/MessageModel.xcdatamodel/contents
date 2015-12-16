@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="Conversations" representedClassName="Conversations" syncable="YES">
+        <attribute name="convoID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="convoName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userIds" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="messageWithin" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Messages" inverseName="messageForConvo" inverseEntity="Messages" syncable="YES"/>
     </entity>
     <entity name="Messages" representedClassName="Messages" syncable="YES">
+        <attribute name="convoID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="messageDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="messageImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,8 +24,8 @@
         <relationship name="messageSender" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Messages" inverseName="whoSent" inverseEntity="Messages" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Conversations" positionX="-522" positionY="-3789" width="128" height="73"/>
-        <element name="Messages" positionX="-711" positionY="-3789" width="128" height="150"/>
+        <element name="Conversations" positionX="-522" positionY="-3789" width="128" height="103"/>
+        <element name="Messages" positionX="-711" positionY="-3789" width="128" height="163"/>
         <element name="Users" positionX="-891" positionY="-3786" width="128" height="118"/>
     </elements>
 </model>

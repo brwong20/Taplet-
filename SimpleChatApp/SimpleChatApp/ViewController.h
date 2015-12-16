@@ -13,7 +13,9 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, weak)NSManagedObjectContext *context;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic)NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic)NSString *convoID;
+@property (strong, nonatomic)NSArray *retrievedMessages;
 
 @end
 

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 #import "ViewController.h"
+#import "ConversationTableView.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +22,12 @@
     // Override point for customization after application launch.
     
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
-    ViewController *mainVC = (ViewController*)[[nav viewControllers]objectAtIndex:0];
-    mainVC.context = self.managedObjectContext;
+    
+    ConversationTableView *convoVC = (ConversationTableView*)[[nav viewControllers]objectAtIndex:0];
+    convoVC.context = self.managedObjectContext;
+    
+//    ViewController *messagesVC = (ViewController*)[[nav viewControllers]objectAtIndex:1];
+//    messagesVC.context = self.managedObjectContext;
     
     return YES;
 }

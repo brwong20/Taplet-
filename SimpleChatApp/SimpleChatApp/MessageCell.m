@@ -26,5 +26,11 @@
     // Configure the view for the selected state
 }
 
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    self.messageLabel.text = nil;
+    self.messageImageView.image = nil;
+}
+
 
 @end

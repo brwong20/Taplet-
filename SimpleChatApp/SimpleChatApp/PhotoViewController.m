@@ -40,7 +40,8 @@
         [self.delegate pictureSent:self.photoImage];
     }
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    NSArray *viewControllers = [self.navigationController viewControllers];
+    [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
 }
 
 -(void)photoOptions:(UILongPressGestureRecognizer*)sender{

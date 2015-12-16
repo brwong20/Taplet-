@@ -15,10 +15,13 @@
 
 @interface MessageText ()
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (weak, nonatomic) IBOutlet UIButton *picturesButton;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
+
 @property (weak, nonatomic) UIImage *imageToSend;
+@property (strong, nonatomic) NSLayoutConstraint *maxTextHeight;
+@property (strong, nonatomic) NSLayoutConstraint *minTextHeight;
 @property (weak, nonatomic) NSManagedObjectContext *context;
 
 @end
@@ -26,28 +29,59 @@
 @implementation MessageText
 
 -(void)awakeFromNib{
-    [self.sendButton addTarget:self action:@selector(sendClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.picturesButton addTarget:self action:@selector(showPictures) forControlEvents:UIControlEventTouchUpInside];
     
     AppDelegate *myApp = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     self.context = myApp.managedObjectContext;
+
+    [self.messageTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:17.0]];
+    self.messageTextView.enablesReturnKeyAutomatically = YES;
+    self.messageTextView.delegate = self;
+    
+    [self.messageTextView.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.messageTextView.layer setBorderWidth:2.0];
+    self.messageTextView.layer.cornerRadius = 5;
+    self.messageTextView.clipsToBounds = YES;
+    
 }
 
-//Get textfield info here and implement save function and update in table view with NSFetchResultscontroller
--(void)sendClicked{
+-(void)layoutSubviews{
+    [super layoutSubviews];
     
-    //If any class is listening, run their implemented delegate method
-    if ([self.delegate respondsToSelector:@selector(sendButtonClicked:)]) {
-        [self.delegate sendButtonClicked:[self.textField text]];
-    }
-    
-    [self.textField setText:@""];
 }
+
+//If we ever want to implement an actual send button instead of using the return key.
+//-(void)sendClicked{
+//    //If any class is listening, run their implemented delegate method
+//    if ([self.delegate respondsToSelector:@selector(sendButtonClicked:)]) {
+//        [self.delegate sendButtonClicked:[self.messageTextField text]];
+//    }
+//    
+//    [self.messageTextField setText:@""];
+//}
 
 -(void)showPictures{
     if ([self.delegate respondsToSelector:@selector(moveToPictures)]) {
         [self.delegate moveToPictures];
     }
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        if ([self.delegate respondsToSelector:@selector(sendButtonClicked:)]) {
+            [self.delegate sendButtonClicked:[self.messageTextView text]];
+        }
+        [self.messageTextView setText:nil];
+        //self.messageTextView.textContainerInset = UIEdgeInsetsZero;
+    }
+    return YES;
+}
+
+-(void)textViewDidChange:(UITextView *)textView{
+    
+    CGSize resizedTextView = [self.messageTextView sizeThatFits:self.messageTextView.frame.size];
+    self.textViewHeight.constant = resizedTextView.height;
+    
 }
 
 @end
